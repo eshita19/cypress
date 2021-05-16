@@ -9,3 +9,7 @@
 3. **Plugins**: Contains any cypress overidden files for custom implementation.
 4. **Support**: Contains index.js which is the first file which runs when cypress loads.
 5. **cypress.json**: Cypress configuration file.(baseURL and others) https://docs.cypress.io/guides/references/configuration#cypress-json
+
+
+## Cypress Commands
+1. CheatSheet: https://cheatography.com/aiqbal/cheat-sheets/cypress-io/
