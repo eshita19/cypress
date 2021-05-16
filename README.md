@@ -12,4 +12,5 @@
 
 
 ## Cypress Commands
-1. CheatSheet: https://cheatography.com/aiqbal/cheat-sheets/cypress-io/
+1. CheatSheet: https://docs.cypress.io/api/table-of-contents
+2. 
