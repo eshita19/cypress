@@ -8,3 +8,4 @@
 2. **Integrations**: Contains all the specs.
 3. **Plugins**: Contains any cypress overidden files for custom implementation.
 4. **Support**: Contains index.js which is the first file which runs when cypress loads.
+5. **cypress.json**: Cypress configuration file.(baseURL and others) https://docs.cypress.io/guides/references/configuration#cypress-json
