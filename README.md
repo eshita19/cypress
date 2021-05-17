@@ -16,13 +16,24 @@ cy.visit**
 1. CheatSheet: https://docs.cypress.io/api/table-of-contents
 2. Important commands:
     1. **cy.visit("/home")**: Go to a particular path specified.
-    2. **cy.get(".class")**: Retrieve element using css selectors.(https://www.w3schools.com/cssref/css_selectors.asp)
+    2. **cy.title()**: Yields the documents title as a string
+    3. **cy.get(".class")**: Retrieve element using css selectors.(https://www.w3schools.com/cssref/css_selectors.asp)
        - **cy.get('header').parent()**: Yield parent el of `header`
        - **cy.get('header').find('ul')**: Yield ul within header element.
        - **cy.get('nav a').first()**: Yield first link in nav
+       - **cy.get('nav a').last()**: Yield last link in nav
        - **cy.get('ul>li').each(() => {...})**: Iterate through each 'li'
        - **cy.get('td').filter('.users')**: Yield all el's with class '.users'
+       - **cy.get('tbody>tr').eq(0)**: Yield first 'tr' in 'tbody'
+       - **cy.get('nav a:first').next()**: Yield next link in nav
+       - **cy.get('nav a:first').prev()**: Yield prev link in nav
+       - **cy.get('input').not('.required')**: Yield all inputs without class '.required'
     4. **cy.fixture("users/admin.json").then((data) => {});**: Loads data from path to a file within fixtures folder.
     5. **cy.contains("selector", "content")**: Find element by its css selector and also content.
     6. **cy.click()/dblClick()**: Click or double click an element.
-    7. 
+    7. **cy.get('select').select('user-1')** Select the 'user-1' option
+    8. **cy.get('form').submit()**: Submit a form
+    9. **cy.get('[type="checkbox"]').check/uncheck()**: Check/uncheck a checkbox.
+    10. **cy.get('[type="text"]').clear()**: Clear text input
+    11. **cy.get('a').trigger('mousedown')**: Trigger mousedown event on link
+    12. **cy.get('input').type('Hello, World')**: Type 'Hello, World' into the 'input'
