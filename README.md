@@ -14,14 +14,20 @@ cy.visit**
 
 ## Cypress Commands
 1. CheatSheet: https://docs.cypress.io/api/table-of-contents
-2. 
 3. Important commands:
-    1. **cy.visit("/home")**: Go to a particular path specified.
-    2. **cy.title()**: Yields the documents title as a string
-    3. **cy.url()**: Yields the current URL as a string
-    4. **cy.wait(500)/cy.wait(alias)**: Wait for some time or an alias to resolve. 
-    5. **cy.fixture("users/admin.json").then((data) => {});**: Loads data from path to a file within fixtures folder.
-    6. **cy.get(".class")**: Retrieve element using css selectors.(https://www.w3schools.com/cssref/css_selectors.asp)
+    1. Custom commands: Unders support=> commands.js=>
+        `
+            Cypress.Commands.add('openHomePage', () => {
+                    cy.visit('/home');
+            });
+        `
+        use it later : cy.openHomePage();
+    3. **cy.visit("/home")**: Go to a particular path specified.
+    4. **cy.title()**: Yields the documents title as a string
+    5. **cy.url()**: Yields the current URL as a string
+    6. **cy.wait(500)/cy.wait(alias)**: Wait for some time or an alias to resolve. 
+    7. **cy.fixture("users/admin.json").then((data) => {});**: Loads data from path to a file within fixtures folder.
+    8. **cy.get(".class")**: Retrieve element using css selectors.(https://www.w3schools.com/cssref/css_selectors.asp)
        - **cy.get('header').parent()**: Yield parent el of `header`
        - **cy.get('header').find('ul')**: Yield ul within header element.
        - **cy.get('header').find('input').text()**: Find the text inside element.
@@ -34,17 +40,17 @@ cy.visit**
        - **cy.get('nav a:first').prev()**: Yield prev link in nav
        - **cy.get('input').not('.required')**: Yield all inputs without class '.required'
        - Note: You cannot store the element in a variable as in selenium. Hence use promise: `cy.get(".class").then((elem) => {})`;
-    7. **cy.get(".class").as("esh")**: Create an alias for the element
-    8. **cy.contains("selector", "content")**: Find element by its css selector and also content.
-    9. **cy.click()/dblClick()**: Click or double click an element.
-    10. **cy.get('select').select('user-1')** Select the 'user-1' option
-    11. **cy.get('form').submit()**: Submit a form
-    12. **cy.get('[type="checkbox"]').check/uncheck()**: Check/uncheck a checkbox.
-    13. **cy.get('[type="text"]').clear()**: Clear text input
-    14. **cy.get('a').trigger('mousedown')**: Trigger mousedown event on link
-    15. **cy.get('input').type('Hello, World')**: Type 'Hello, World' into the 'input'
-    16. **cy.get('form').focus()/blur()**: Focus or blur on an element.
-    17. **cy.get('form').should(chainers, value)**: Chainers are spy chainers
+    9. **cy.get(".class").as("esh")**: Create an alias for the element
+    10. **cy.contains("selector", "content")**: Find element by its css selector and also content.
+    11. **cy.click()/dblClick()**: Click or double click an element.
+    12. **cy.get('select').select('user-1')** Select the 'user-1' option
+    13. **cy.get('form').submit()**: Submit a form
+    14. **cy.get('[type="checkbox"]').check/uncheck()**: Check/uncheck a checkbox.
+    15. **cy.get('[type="text"]').clear()**: Clear text input
+    16. **cy.get('a').trigger('mousedown')**: Trigger mousedown event on link
+    17. **cy.get('input').type('Hello, World')**: Type 'Hello, World' into the 'input'
+    18. **cy.get('form').focus()/blur()**: Focus or blur on an element.
+    19. **cy.get('form').should(chainers, value)**: Chainers are spy chainers
         - _cy.get('.error').should('be.empty')_ // Assert that '.error' is empty
         - _cy.contains('Login').should('be.visible')_ // Assert that el is visible
         - _cy.wrap({ foo: 'bar' }).its('foo').should('eq', 'bar')_ // Assert the 'foo' property equals 'bar'
