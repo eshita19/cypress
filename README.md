@@ -17,7 +17,10 @@ cy.visit**
 2. Important commands:
     1. **cy.visit("/home")**: Go to a particular path specified.
     2. **cy.title()**: Yields the documents title as a string
-    3. **cy.get(".class")**: Retrieve element using css selectors.(https://www.w3schools.com/cssref/css_selectors.asp)
+    3. **cy.url()**: Yields the current URL as a string
+    4. **cy.wait(500)/cy.wait(alias)**: Wait for some time or an alias to resolve. 
+    5. **cy.fixture("users/admin.json").then((data) => {});**: Loads data from path to a file within fixtures folder.
+    6. **cy.get(".class")**: Retrieve element using css selectors.(https://www.w3schools.com/cssref/css_selectors.asp)
        - **cy.get('header').parent()**: Yield parent el of `header`
        - **cy.get('header').find('ul')**: Yield ul within header element.
        - **cy.get('nav a').first()**: Yield first link in nav
@@ -28,12 +31,12 @@ cy.visit**
        - **cy.get('nav a:first').next()**: Yield next link in nav
        - **cy.get('nav a:first').prev()**: Yield prev link in nav
        - **cy.get('input').not('.required')**: Yield all inputs without class '.required'
-    4. **cy.fixture("users/admin.json").then((data) => {});**: Loads data from path to a file within fixtures folder.
-    5. **cy.contains("selector", "content")**: Find element by its css selector and also content.
-    6. **cy.click()/dblClick()**: Click or double click an element.
-    7. **cy.get('select').select('user-1')** Select the 'user-1' option
-    8. **cy.get('form').submit()**: Submit a form
-    9. **cy.get('[type="checkbox"]').check/uncheck()**: Check/uncheck a checkbox.
-    10. **cy.get('[type="text"]').clear()**: Clear text input
-    11. **cy.get('a').trigger('mousedown')**: Trigger mousedown event on link
-    12. **cy.get('input').type('Hello, World')**: Type 'Hello, World' into the 'input'
+    7. **cy.get(".class").as("esh")**: Create an alias for the element
+    8. **cy.contains("selector", "content")**: Find element by its css selector and also content.
+    9. **cy.click()/dblClick()**: Click or double click an element.
+    10. **cy.get('select').select('user-1')** Select the 'user-1' option
+    11. **cy.get('form').submit()**: Submit a form
+    12. **cy.get('[type="checkbox"]').check/uncheck()**: Check/uncheck a checkbox.
+    13. **cy.get('[type="text"]').clear()**: Clear text input
+    14. **cy.get('a').trigger('mousedown')**: Trigger mousedown event on link
+    15. **cy.get('input').type('Hello, World')**: Type 'Hello, World' into the 'input'
