@@ -40,3 +40,19 @@ cy.visit**
     13. **cy.get('[type="text"]').clear()**: Clear text input
     14. **cy.get('a').trigger('mousedown')**: Trigger mousedown event on link
     15. **cy.get('input').type('Hello, World')**: Type 'Hello, World' into the 'input'
+    16. **cy.get('form').focus()/blur()**: Focus or blur on an element.
+    17. **cy.get('form').should(chainers, value)**: Chainers are spy chainers
+        - _cy.get('.error').should('be.empty')_ // Assert that '.error' is empty
+        - _cy.contains('Login').should('be.visible')_ // Assert that el is visible
+        - _cy.wrap({ foo: 'bar' }).its('foo').should('eq', 'bar')_ // Assert the 'foo' property equals 'bar'
+        - _cy.get(':checkbox').should('be.disabled')_
+        - _cy.get('form').should('have.class', 'form-horizontal')_
+        - _cy.get('input').should('not.have.value', 'Jane')_
+        - _cy.get('#header a').should('have.attr', 'href')_
+        - _cy.get('#input-receives-focus').should('have.focus')_
+        - `cy.get('.connectors-list > li').should(($lis) => {
+          expect($lis).to.have.length(3)
+          expect($lis.eq(0)).to.contain('Walk the dog')
+          expect($lis.eq(1)).to.contain('Feed the cat')
+          expect($lis.eq(2)).to.contain('Write JavaScript')
+          })`
