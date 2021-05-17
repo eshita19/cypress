@@ -50,7 +50,10 @@ cy.visit**
     16. **cy.get('a').trigger('mousedown')**: Trigger mousedown event on link
     17. **cy.get('input').type('Hello, World')**: Type 'Hello, World' into the 'input'
     18. **cy.get('form').focus()/blur()**: Focus or blur on an element.
-    19. **cy.get('form').should(chainers, value)**: Chainers are spy chainers
+    19. **cy.intercept**:https://docs.cypress.io/api/commands/intercept#Syntax-and-Usage
+        ![image](https://user-images.githubusercontent.com/33754197/118445237-cd311000-b70b-11eb-9217-186f4914ad64.png)
+
+    21. **cy.get('form').should(chainers, value)**: Chainers are spy chainers
         - _cy.get('.error').should('be.empty')_ // Assert that '.error' is empty
         - _cy.contains('Login').should('be.visible')_ // Assert that el is visible
         - _cy.wrap({ foo: 'bar' }).its('foo').should('eq', 'bar')_ // Assert the 'foo' property equals 'bar'
@@ -65,6 +68,9 @@ cy.visit**
           expect($lis.eq(1)).to.contain('Feed the cat')
           expect($lis.eq(2)).to.contain('Write JavaScript')
           })`
+          
+          
+          
           
           
           
