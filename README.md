@@ -14,7 +14,8 @@ cy.visit**
 
 ## Cypress Commands
 1. CheatSheet: https://docs.cypress.io/api/table-of-contents
-2. Important commands:
+2. 
+3. Important commands:
     1. **cy.visit("/home")**: Go to a particular path specified.
     2. **cy.title()**: Yields the documents title as a string
     3. **cy.url()**: Yields the current URL as a string
@@ -23,6 +24,7 @@ cy.visit**
     6. **cy.get(".class")**: Retrieve element using css selectors.(https://www.w3schools.com/cssref/css_selectors.asp)
        - **cy.get('header').parent()**: Yield parent el of `header`
        - **cy.get('header').find('ul')**: Yield ul within header element.
+       - **cy.get('header').find('input').text()**: Find the text inside element.
        - **cy.get('nav a').first()**: Yield first link in nav
        - **cy.get('nav a').last()**: Yield last link in nav
        - **cy.get('ul>li').each(() => {...})**: Iterate through each 'li'
@@ -31,6 +33,7 @@ cy.visit**
        - **cy.get('nav a:first').next()**: Yield next link in nav
        - **cy.get('nav a:first').prev()**: Yield prev link in nav
        - **cy.get('input').not('.required')**: Yield all inputs without class '.required'
+       - Note: You cannot store the element in a variable as in selenium. Hence use promise: `cy.get(".class").then((elem) => {})`;
     7. **cy.get(".class").as("esh")**: Create an alias for the element
     8. **cy.contains("selector", "content")**: Find element by its css selector and also content.
     9. **cy.click()/dblClick()**: Click or double click an element.
@@ -56,3 +59,6 @@ cy.visit**
           expect($lis.eq(1)).to.contain('Feed the cat')
           expect($lis.eq(2)).to.contain('Write JavaScript')
           })`
+          
+          
+          
