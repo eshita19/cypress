@@ -16,9 +16,12 @@ cy.visit**
 1. CheatSheet: https://docs.cypress.io/api/table-of-contents
 2. Important commands:
     1. **cy.visit("/home")**: Go to a particular path specified.
-    2. **cy.get(".class")**: Retrieve element using css selectors.
+    2. **cy.get(".class")**: Retrieve element using css selectors.(https://www.w3schools.com/cssref/css_selectors.asp)
        - **cy.get('header').parent()**: Yield parent el of `header`
-       - 
+       - **cy.get('header').find('ul')**: Yield ul within header element.
+       - **cy.get('nav a').first()**: Yield first link in nav
+       - **cy.get('ul>li').each(() => {...})**: Iterate through each 'li'
+       - **cy.get('td').filter('.users')**: Yield all el's with class '.users'
     4. **cy.fixture("users/admin.json").then((data) => {});**: Loads data from path to a file within fixtures folder.
     5. **cy.contains("selector", "content")**: Find element by its css selector and also content.
     6. **cy.click()/dblClick()**: Click or double click an element.
